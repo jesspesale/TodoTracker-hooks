@@ -1,10 +1,10 @@
 import {useEffect} from 'react'
 import {useSelector, useDispatch} from "react-redux"
-import { fetchTodos } from '../redux/todoActions';
-import Todo from './Todo';
+import { fetchLists } from '../redux/listActions';
+import List from './List';
 import { Link } from "react-router-dom";
 
-export default function TodoList() {
+export default function Lists() {
   const todos = useSelector(state => state);
   // basically replaces mapStateToProps
   const dispatch = useDispatch()
@@ -18,11 +18,10 @@ export default function TodoList() {
 
   return (
   <div>
-    <h2>Todo Lists</h2>
-    {/* {renderTodos()} */}
-    {todos && todos.map(todo => {
-      return <Link to={`/todos/${todo.id}`}>{todo.title}</Link>;
-      // <Todo todo={todo} key={todo.id}/>
+    <h2>Your Lists</h2>
+    {todos && todos.map(list => {
+      return <Link to={`/lists/${list.id}`}>{list.title}</Link>;
+      // <LIST list={list} key={list.id}/>
     })}
   </div>
   )
