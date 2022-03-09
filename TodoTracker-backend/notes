@@ -1,0 +1,17 @@
+
+
+
+List
+    title       :string
+    completed   :boolean
+
+has_many :list_items
+
+ListItem
+    description     :string
+    completed       :boolean
+    list_id         :integer
+
+belongs_to  :list
+
+test
