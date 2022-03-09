@@ -4,7 +4,7 @@ export function fetchLists(){
     return (dispatch) => {
         fetch("http://localhost:3000/api/v1/lists")
           .then((res) => res.json())
-          .then((lists) => dispatch({ type: SET_lists, payload: lists }));
+          .then((lists) => dispatch({ type: SET_LISTS, payload: lists }));
     }
 }
 
