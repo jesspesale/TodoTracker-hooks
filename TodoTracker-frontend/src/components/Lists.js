@@ -18,6 +18,7 @@ export default function Lists() {
 
 console.log(lists)
 
+
       return (
         <div>
           {Array.isArray(lists) &&
