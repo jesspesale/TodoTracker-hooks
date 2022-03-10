@@ -1,22 +1,26 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { createListItem } from "../../redux/listActions";
-// import { useNavigate } from "react-router-dom";
+import React, { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { createListItem } from "../../redux/listActions"
+import { useNavigate, useHistory, useParams } from "react-router-dom";
 
 export default function ListItemForm({list}) {
-  const [item, setItem] = useState("");
-  const dispatch = useDispatch();
-//   const navigate = useNavigate();
+  const [item, setItem] = useState("")
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  // const newList = useSelector((state) => state.lists.find(list => list.id === list.id));
 
+  const newList = useParams()
+  // console.log(newList)
 
   function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
     let newItem = {description: item, completed: false, list_id: list.id}
     dispatch(createListItem(newItem, list.id))
-    //   setItem("");
+    setItem("")
+
+    navigate(`/lists/${list.id}`)
   }
-  //   navigate("/lists");
-  //   dispatch(createList({ title: title, completed: false }));
+
 
   return (
     <div>
@@ -26,5 +30,5 @@ export default function ListItemForm({list}) {
         <input value={item} onChange={(e) => setItem(e.target.value)} />
       </form>
     </div>
-  );
+  )
 }

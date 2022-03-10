@@ -4,8 +4,10 @@ import ListItemForm from './ListItems/ListItemForm';
 import List from './Lists/List';
 
 export default function ListContainer() {
+
   const location = useLocation();
   const { list } = location.state;
+  console.log(list)
 
   return (
     <div>
