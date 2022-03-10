@@ -16,7 +16,6 @@ export default function Lists() {
     dispatch(fetchLists())
   }, []);
 
-// console.log(lists)
 
       return (
         <div>

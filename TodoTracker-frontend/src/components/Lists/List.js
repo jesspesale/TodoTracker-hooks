@@ -1,15 +1,17 @@
 import React from 'react'
-import { useParams, useLocation } from 'react-router-dom';
+// import { useParams, useLocation } from 'react-router-dom';
+
 import ListItemForm from '../ListItems/ListItemForm';
 
 
-export default function List() {
-  let id = useParams();
+export default function List({list}) {
+  // let id = useParams();
 
-  const location = useLocation();
-  const { list } = location.state;
+  // const location = useLocation();
+  // const { list } = location.state;
   // https://ui.dev/react-router-pass-props-to-link
 
+  // console.log(list)
   return (
     <div>
       <h4>{list.title}</h4>
