@@ -4,8 +4,9 @@ import {Routes, Route, Link} from "react-router-dom"
 import Lists from "./components/Lists/Lists"
 import ListForm from './components/Lists/ListForm';
 import Home from './components/Home';
-import List from './components/Lists/List';
+// import List from './components/Lists/List';
 import Navbar from './components/Navbar';
+import ListContainer from './components/ListContainer';
 
 
 class App extends React.Component {
@@ -20,7 +21,7 @@ class App extends React.Component {
           <Route path="/" element={<Home/>} />
           <Route path="/lists" element={<Lists />} />
           <Route path="/lists/new" element={<ListForm />} />
-          <Route path="/lists/:id" element={<List />} />
+          <Route path="/lists/:id" element={<ListContainer />} />
         </Routes>
       </div>
     );

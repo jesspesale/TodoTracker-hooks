@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+// import { createListItem } from "../../redux/listActions";
 // import { useNavigate } from "react-router-dom";
 
 export default function ListItemForm() {
@@ -9,6 +10,8 @@ export default function ListItemForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    // dispatch(createListItem)
+    // createListItem()
     //   dispatch(createList({ title: title, completed: false }));
     //   setItem("");
     //   navigate("/lists");
