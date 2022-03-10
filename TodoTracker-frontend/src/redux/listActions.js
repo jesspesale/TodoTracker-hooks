@@ -1,4 +1,4 @@
-import {FETCH_LISTS, ADD_LIST, GET_LIST} from './constants'
+import {FETCH_LISTS, ADD_LIST} from './constants'
 
 export function fetchLists(){
     return (dispatch) => {

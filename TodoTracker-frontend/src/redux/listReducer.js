@@ -11,7 +11,7 @@ export default function listReducer(state = {lists: []}, action){
         console.log(action.payload);
       return {
         ...state, 
-        trips: action.payload
+        lists: [...state.lists, action.payload]
       }
       default:
         return state;
