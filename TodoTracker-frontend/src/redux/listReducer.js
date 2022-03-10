@@ -9,7 +9,10 @@ export default function listReducer(state = {lists: []}, action){
         }
       case ADD_LIST:
         console.log(action.payload);
-      // return [...state, action.payload]
+      return {
+        ...state, 
+        trips: action.payload
+      }
       default:
         return state;
     }

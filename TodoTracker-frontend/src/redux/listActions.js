@@ -22,12 +22,3 @@ export function createList(list){
         .then((list) => dispatch({ type: ADD_LIST, payload: list }));
     };    
 }
-
-
-// export function getList(id) {
-//   return (dispatch) => {
-//     fetch(`http://localhost:3000/api/v1/lists/${id}`)
-//       .then((res) => res.json())
-//       .then((lists) => dispatch({ type: GET_LIST, payload: lists }));
-//   };
-// }

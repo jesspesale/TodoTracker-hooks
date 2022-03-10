@@ -15,15 +15,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <Navbar/>
-        {/* <Link to="/" className="nav">
-          Home
-        </Link>
-        <Link to="/lists" className="nav">
-          All Lists
-        </Link>
-        <Link to="/lists/new" className="nav">
-          Create a new List
-        </Link> */}
         <br></br>
         <Routes>
           <Route path="/" element={<Home/>} />
