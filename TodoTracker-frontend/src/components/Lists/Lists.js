@@ -1,15 +1,15 @@
 import {useEffect} from 'react'
 import {useSelector, useDispatch} from "react-redux"
-import { fetchLists } from '../redux/listActions';
+import { fetchLists } from '../../redux/listActions';
 import List from './List';
-import { FETCH_LISTS } from '../redux/constants';
+import { FETCH_LISTS } from '../../redux/constants';
 import { Link } from "react-router-dom";
 
 export default function Lists() {
   const lists = useSelector(state => state.lists);
-  // basically replaces mapStateToProps
+  // replaces mapStateToProps
   const dispatch = useDispatch()
-  // basically replaces mapDispatchToProps
+  // replaces mapDispatchToProps
 
 
   useEffect(() => {

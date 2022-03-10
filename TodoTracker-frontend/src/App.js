@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 import {Routes, Route, Link} from "react-router-dom"
-import TodoList from "./components/Lists"
-import TodoForm from './components/ListForm';
-import Todo from './components/List';
-import List from './components/List';
+import Lists from "./components/Lists/Lists"
+import ListForm from './components/Lists/ListForm';
+import Home from './components/Home';
+import List from './components/Lists/List';
 
 
 class App extends React.Component {
@@ -24,12 +24,10 @@ class App extends React.Component {
         </Link>
         <br></br>
         <Routes>
-          <Route path="/lists" element={<TodoList />} />
-          <Route path="/lists/new" element={<TodoForm />} />
-          <Route 
-            path="/lists/:id" 
-            element={<List />}
-            />
+          <Route path="/" element={<Home/>} />
+          <Route path="/lists" element={<Lists />} />
+          <Route path="/lists/new" element={<ListForm />} />
+          <Route path="/lists/:id" element={<List />} />
         </Routes>
       </div>
     );

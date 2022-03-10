@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createList } from "../redux/listActions";
+import { createList } from "../../redux/listActions";
 
 
 export default function ListForm() {
