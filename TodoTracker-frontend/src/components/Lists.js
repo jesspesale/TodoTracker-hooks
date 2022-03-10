@@ -1,28 +1,29 @@
 import {useEffect} from 'react'
 import {useSelector, useDispatch} from "react-redux"
 import { fetchLists } from '../redux/listActions';
-// import List from './List';
-import { Link } from "react-router-dom";
+import List from './List';
+import { FETCH_LISTS } from '../redux/constants';
+// import { Link } from "react-router-dom";
 
 export default function Lists() {
-  const todos = useSelector(state => state.lists);
+  const lists = useSelector(state => state);
   // basically replaces mapStateToProps
   const dispatch = useDispatch()
   // basically replaces mapDispatchToProps
 
+
   useEffect(() => {
     dispatch(fetchLists())
-  }, [])
+  }, []);
 
-  // console.log(todos)
+console.log(lists)
 
-  return (
-  <div>
-    <h2>Your Lists</h2>
-    {todos && todos.map(list => {
-      return <Link to={`/lists/${list.id}`}>{list.title}</Link>;
-      // <LIST list={list} key={list.id}/>
-    })}
-  </div>
-  )
+      return (
+        <div>
+          {Array.isArray(lists) &&
+            lists.map((list) => {
+              return <List list={list} key={list.id} />;
+            })}
+        </div>
+      );
 }

@@ -1,10 +1,10 @@
-import {SET_LISTS, ADD_LIST} from './constants'
+import {FETCH_LISTS, ADD_LIST} from './constants'
 
 export function fetchLists(){
     return (dispatch) => {
         fetch("http://localhost:3000/api/v1/lists")
           .then((res) => res.json())
-          .then((lists) => dispatch({ type: SET_LISTS, payload: lists }));
+          .then((lists) => dispatch({ type: FETCH_LISTS, payload: lists }));
     }
 }
 
