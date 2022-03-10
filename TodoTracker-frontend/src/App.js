@@ -4,6 +4,7 @@ import {Routes, Route, Link} from "react-router-dom"
 import TodoList from "./components/Lists"
 import TodoForm from './components/ListForm';
 import Todo from './components/List';
+import List from './components/List';
 
 
 class App extends React.Component {
@@ -25,7 +26,10 @@ class App extends React.Component {
         <Routes>
           <Route path="/lists" element={<TodoList />} />
           <Route path="/lists/new" element={<TodoForm />} />
-          {/* <Route path="/todos/:id" element={<Todo />} /> */}
+          <Route 
+            path="/lists/:id" 
+            element={<List />}
+            />
         </Routes>
       </div>
     );

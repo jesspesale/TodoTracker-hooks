@@ -1,4 +1,4 @@
-import {FETCH_LISTS, ADD_LIST} from './constants'
+import {FETCH_LISTS, ADD_LIST, GET_LIST} from './constants'
 
 export function fetchLists(){
     return (dispatch) => {
@@ -7,7 +7,6 @@ export function fetchLists(){
           .then((lists) => dispatch({ type: FETCH_LISTS, payload: lists }));
     }
 }
-
 
 export function createList(list){
     return (dispatch) => {
@@ -23,3 +22,12 @@ export function createList(list){
         .then((list) => dispatch({ type: ADD_LIST, payload: list }));
     };    
 }
+
+
+// export function getList(id) {
+//   return (dispatch) => {
+//     fetch(`http://localhost:3000/api/v1/lists/${id}`)
+//       .then((res) => res.json())
+//       .then((lists) => dispatch({ type: GET_LIST, payload: lists }));
+//   };
+// }

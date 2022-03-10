@@ -16,17 +16,21 @@ export default function Lists() {
     dispatch(fetchLists())
   }, []);
 
-console.log(lists)
-
+// console.log(lists)
 
       return (
         <div>
-            {lists.map((list) => {
-              return(
-                <Link key={list.id} to={`/lists/${list.id}`} list={list}>{list.title}</Link>
-
+            {Array.isArray(lists) && lists.map((list) => {
+              return (
+                <Link
+                  key={list.id}
+                  to={`/lists/${list.id}`}
+                  state={{ list: list }}
+                >
+                  <h2>{list.title}</h2>
+                </Link>
                 // <List list={list} key={list.id} />;
-              )
+              );
 
             })}
         </div>
