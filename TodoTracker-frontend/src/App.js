@@ -5,6 +5,7 @@ import Lists from "./components/Lists/Lists"
 import ListForm from './components/Lists/ListForm';
 import Home from './components/Home';
 import List from './components/Lists/List';
+import Navbar from './components/Navbar';
 
 
 class App extends React.Component {
@@ -13,7 +14,8 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <Link to="/" className="nav">
+        <Navbar/>
+        {/* <Link to="/" className="nav">
           Home
         </Link>
         <Link to="/lists" className="nav">
@@ -21,7 +23,7 @@ class App extends React.Component {
         </Link>
         <Link to="/lists/new" className="nav">
           Create a new List
-        </Link>
+        </Link> */}
         <br></br>
         <Routes>
           <Route path="/" element={<Home/>} />
