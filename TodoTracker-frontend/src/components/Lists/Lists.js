@@ -29,7 +29,6 @@ export default function Lists() {
                 >
                   <h2>{list.title}</h2>
                 </Link>
-                // <List list={list} key={list.id} />;
               );
 
             })}

@@ -1,5 +1,7 @@
 import React from 'react'
 import { useParams, useLocation } from 'react-router-dom';
+import ListItemForm from '../ListItems/ListItemForm';
+
 
 export default function List() {
   let id = useParams();
@@ -12,8 +14,14 @@ export default function List() {
     <div>
       <h4>{list.title}</h4>
       {list.list_items.map((item) => {
-        return <li key={item.id}>{item.description}</li>;
+        return (
+          <div key={item.id}>
+            <li key={item.id}>{item.description}</li>
+          </div>
+        );  
       })}
+      <br></br>
+      <ListItemForm />
     </div>
   );
 }
