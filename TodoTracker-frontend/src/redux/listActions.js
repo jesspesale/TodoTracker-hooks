@@ -24,17 +24,18 @@ export function createList(list){
 }
 
 export function createListItem(item, listId) {
+    // console.log(item, listId)
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/lists/${listId}/list_items`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
+        "Accept": "application/json",
       },
-      body: JSON.stringify(item),
+      body: JSON.stringify(item)
     })
       .then((res) => res.json())
       .then(item => console.log(item))
-    //   .then((list) => dispatch({ type: ADD_ITEM, payload: list }));
+    //   .then((list) => dispatch({ type: ADD_ITEM, id: listId, payload: list }));
   };
 }

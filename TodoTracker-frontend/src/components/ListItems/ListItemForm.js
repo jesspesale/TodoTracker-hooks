@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-// import { createListItem } from "../../redux/listActions";
+import { createListItem } from "../../redux/listActions";
 // import { useNavigate } from "react-router-dom";
 
-export default function ListItemForm() {
+export default function ListItemForm({list}) {
   const [item, setItem] = useState("");
   const dispatch = useDispatch();
 //   const navigate = useNavigate();
 
+
   function handleSubmit(e) {
     e.preventDefault();
-    // dispatch(createListItem)
+    console.log(item)
+    let newItem = {description: item, completed: false, list_id: list.id}
+    dispatch(createListItem(newItem, list.id))
     // createListItem()
-    //   dispatch(createList({ title: title, completed: false }));
     //   setItem("");
-    //   navigate("/lists");
   }
+  //   navigate("/lists");
+  //   dispatch(createList({ title: title, completed: false }));
 
   return (
     <div>

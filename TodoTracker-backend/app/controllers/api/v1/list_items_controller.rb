@@ -16,8 +16,7 @@ class Api::V1::ListItemsController < ApplicationController
     end
     
     def create
-        @list_item = @list.list_items.new(list_item_params)
-
+        @list_item = @list.list_items.build(list_item_params)
         if @list_item.save
             render json: @list_item
         else
