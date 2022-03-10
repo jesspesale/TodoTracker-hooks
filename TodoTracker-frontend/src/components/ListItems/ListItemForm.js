@@ -11,10 +11,8 @@ export default function ListItemForm({list}) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(item)
     let newItem = {description: item, completed: false, list_id: list.id}
     dispatch(createListItem(newItem, list.id))
-    // createListItem()
     //   setItem("");
   }
   //   navigate("/lists");

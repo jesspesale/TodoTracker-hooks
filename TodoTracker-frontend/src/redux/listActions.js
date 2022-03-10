@@ -35,7 +35,7 @@ export function createListItem(item, listId) {
       body: JSON.stringify(item)
     })
       .then((res) => res.json())
-      .then(item => console.log(item))
-    //   .then((list) => dispatch({ type: ADD_ITEM, id: listId, payload: list }));
+    //   .then(item => console.log(item))
+      .then((list) => dispatch({ type: ADD_ITEM, id: listId, payload: list }));
   };
 }
