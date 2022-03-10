@@ -1,22 +1,22 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createList } from "../../redux/listActions";
-import { useNavigate, useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function ListForm() {
     const [title, setTitle] = useState('')
+    const lists = useSelector((state) => state.lists);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    let history = useHistory();
+
 
     function handleSubmit(e){
         e.preventDefault()
-        let lists = dispatch(createList({title: title, completed: false}))
-        console.log(lists)
-        history.push("/lists")
-        // navigate('/lists')
+        console.log(dispatch(createList({ title: title, completed: false })));
+        // dispatch(createList({title: title, completed: false}))
+        navigate('/lists')
         // <Navigate to="/lists" />
         setTitle('')
     }
