@@ -6,7 +6,7 @@ import { FETCH_LISTS } from '../redux/constants';
 // import { Link } from "react-router-dom";
 
 export default function Lists() {
-  const lists = useSelector(state => state);
+  const lists = useSelector(state => state.lists);
   // basically replaces mapStateToProps
   const dispatch = useDispatch()
   // basically replaces mapDispatchToProps
@@ -21,8 +21,7 @@ console.log(lists)
 
       return (
         <div>
-          {Array.isArray(lists) &&
-            lists.map((list) => {
+            {lists.map((list) => {
               return <List list={list} key={list.id} />;
             })}
         </div>

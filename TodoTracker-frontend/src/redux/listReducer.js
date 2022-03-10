@@ -5,7 +5,10 @@ export default function listReducer(state = {lists: []}, action){
     switch (action.type) {
       case FETCH_LISTS:
         // console.log(action)
-        return action.payload;
+        return {
+          ...state,
+          lists: action.payload
+        }
       case ADD_LIST:
         console.log(action.payload);
       // return [...state, action.payload]
