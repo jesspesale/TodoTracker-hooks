@@ -16,6 +16,7 @@ class Api::V1::ListsController < ApplicationController
     end
 
     def show
+        # binding.pry
         @list = List.find(params[:id])
         render json: @list
     end
