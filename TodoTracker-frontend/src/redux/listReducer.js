@@ -13,20 +13,17 @@ export default function listReducer(state = {lists: []}, action){
             lists: [...state.lists, action.payload],
           };
         case ADD_ITEM:
-          console.log(action.payload)
-          console.log(state)
-          let newLists = state.lists.map(list => {
-            if(list.id === action.payload.list_id){
+          let newLists = state.lists.map((list) => {
+            if (list.id === action.payload.id) {
               return action.payload
-            }else{
+            } else {
               return list
             }
-          })
-          // debugger
+          });
           return {
             ...state,
             lists: newLists
-          };
+          }
 
       default:
         return state;
