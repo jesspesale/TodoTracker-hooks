@@ -10,8 +10,10 @@ export default function Lists() {
   // replaces mapDispatchToProps
 
   useEffect(() => {
-    dispatch(fetchLists())
-  }, [])
+    if(!lists.length){
+      dispatch(fetchLists())
+    }
+  }, [dispatch, lists])
 
       return (
         <div>
@@ -20,7 +22,8 @@ export default function Lists() {
                 <Link
                   key={list.id}
                   to={`/lists/${list.id}`}
-                  state={{ list: list }}
+                  // list={list}
+                  // state={{ list: list }}
                 >
                   <h2>{list.title}</h2>
                 </Link>

@@ -4,7 +4,6 @@ import {Routes, Route, Link} from "react-router-dom"
 import Lists from "./components/Lists/Lists"
 import ListForm from './components/Lists/ListForm';
 import Home from './components/Home';
-// import List from './components/Lists/List';
 import Navbar from './components/Navbar';
 import ListContainer from './components/ListContainer';
 

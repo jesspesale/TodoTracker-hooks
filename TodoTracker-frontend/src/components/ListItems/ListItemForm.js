@@ -9,7 +9,7 @@ export default function ListItemForm({list}) {
   const navigate = useNavigate()
   // const newList = useSelector((state) => state.lists.find(list => list.id === list.id));
 
-  const newList = useParams()
+  // const newList = useParams()
   // console.log(newList)
 
   function handleSubmit(e) {
@@ -18,7 +18,7 @@ export default function ListItemForm({list}) {
     dispatch(createListItem(newItem, list.id))
     setItem("")
 
-    navigate(`/lists/${list.id}`)
+    // navigate(`/lists/${list.id}`)
   }
 
 
