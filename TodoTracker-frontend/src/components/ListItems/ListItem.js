@@ -15,7 +15,7 @@ export default function ListItem({item}) {
           </div>
         <button 
             className='li-delete-button'
-            onClick={handleClick(item)}
+            onClick={() => handleClick(item)}
         >X</button>
       </div>
   );
