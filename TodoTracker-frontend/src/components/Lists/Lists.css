@@ -1,17 +1,16 @@
 .list-link{
     text-decoration: none;
-    color:  rgb(68, 156, 233);
+    color:  blue;
 }
 
 .list-item{
-    /* padding-left: 10px; */
-    /* margin-left: 50px; */
   display: flex;
   justify-content: space-between;
   text-align: center;
-  width: 200px;
+  width: 300px;
   margin-left: 80px;
   font-size: 20px;
+  padding: 10px;
 
 }
 
