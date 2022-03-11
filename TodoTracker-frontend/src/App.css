@@ -3,6 +3,11 @@
 }
 
 .nav{
-  padding: 300px 10px;
-  /* margin: 10px; */
+  padding: 20px;
+   display: inline;  
+
 }
+.navbar{
+  display: flex;   
+  justify-content: center; 
+  }
