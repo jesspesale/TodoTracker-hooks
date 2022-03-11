@@ -20,13 +20,10 @@ export default function Lists() {
                 <Link
                   key={list.id}
                   to={`/lists/${list.id}`}
-                  // list={list}
-                  // state={{ list: list }}
                 >
                   <h2>{list.title}</h2>
                 </Link>
               )
-
             })}
         </div>
       )
