@@ -1,11 +1,13 @@
 import React from 'react'
+import "../Lists/Lists.css"
 
 export default function ListItem({item}) {
   return (
-    <div>
-      <div key={item.id}>
-        <li key={item.id}>{item.description}</li>
+      <div className='list-item'>
+          <div>
+            <li>{item.description}</li>
+          </div>
+        <button className='li-delete-button'>X</button>
       </div>
-    </div>
   );
 }
