@@ -10,10 +10,8 @@ export default function Lists() {
   // replaces mapDispatchToProps
 
   useEffect(() => {
-    if(!lists.length){
       dispatch(fetchLists())
-    }
-  }, [dispatch, lists])
+  }, [])
 
       return (
         <div>
