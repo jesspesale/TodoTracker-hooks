@@ -17,8 +17,10 @@ class Api::V1::ListItemsController < ApplicationController
     
     def create
         @list_item = @list.list_items.build(list_item_params)
+        # @list_item = list_items.build(list_item_params)
+        # binding.pry
         if @list_item.save
-            render json: @list_item
+            render json: @list
         else
             render json: {error: "Error creating list item"}
         end
