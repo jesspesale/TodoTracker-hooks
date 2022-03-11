@@ -5,7 +5,6 @@ import List from './Lists/List';
 import { useSelector } from 'react-redux';
 
 export default function ListContainer() {
-
   // const location = useLocation();
   // const { list } = location.state;
     const { id } = useParams();

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import ListItem from '../ListItems/ListItem';
 
 export default function List({list}) {
 
@@ -9,7 +9,7 @@ export default function List({list}) {
       {list.list_items.map((item) => {
         return (
           <div key={item.id}>
-            <li key={item.id}>{item.description}</li>
+            <ListItem item={item} key={item.id} />
           </div>
         );  
       })}
