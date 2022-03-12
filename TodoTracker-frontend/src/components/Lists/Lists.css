@@ -9,21 +9,11 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-  width: 400px;
-  margin-left: 50px;
+  width: 475px;
+  margin-left: 30px;
   font-size: 20px;
-  padding: 10px;
+  padding: 7px;
   color: white;
-}
-
-.li-delete-button{
-    /* margin-left: 15px; */
-    font-size: 10px;
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  cursor: pointer;
-    /* padding: -5px; */
 }
 
 .item-row {
@@ -107,4 +97,13 @@
   );
   color: #fff;
   text-transform: capitalize;
+}
+
+.icons{
+  display: flex;
+  align-items: center;
+  font-size: 36px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 10px;
 }

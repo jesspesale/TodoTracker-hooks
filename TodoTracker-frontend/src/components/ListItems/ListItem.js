@@ -3,6 +3,7 @@ import { deleteListItem } from '../../redux/listActions'
 import "../Lists/Lists.css"
 import { useDispatch } from "react-redux"
 import { useNavigate } from 'react-router-dom'
+import {BsTrash} from "react-icons/bs"
 
 export default function ListItem({item}) {
   const dispatch = useDispatch()
@@ -16,14 +17,9 @@ export default function ListItem({item}) {
     }
 
   return (
-      <div className='list-item'>
-          <div className='item-row'>
-           {item.description}
-          </div>
-        <button 
-            className='li-delete-button'
-            onClick={() => handleClick(item)}
-        >X</button>
-      </div>
-  )
+    <div className="list-item">
+      <div className="item-row">{item.description}</div>
+      <BsTrash className="icons" onClick={() => handleClick(item)} />
+    </div>
+  );
 }
