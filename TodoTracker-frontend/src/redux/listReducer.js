@@ -1,4 +1,4 @@
-import { FETCH_LISTS, ADD_LIST, ADD_ITEM } from "./constants";
+import { FETCH_LISTS, ADD_LIST, ADD_ITEM, DELETE_LIST_ITEM } from "./constants";
 
 export default function listReducer(state = {lists: []}, action){
     switch (action.type) {
@@ -24,6 +24,9 @@ export default function listReducer(state = {lists: []}, action){
             ...state,
             lists: newLists
           }
+        case DELETE_LIST_ITEM:
+          console.log(action.type)
+          console.log(state.lists)
 
       default:
         return state;

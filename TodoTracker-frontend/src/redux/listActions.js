@@ -46,7 +46,7 @@ export const deleteListItem = (listId, itemId) => {
           method: "DELETE",
         })
         .then((resp) => resp.json())
-        .then((list) => console.log(list));
-      // .then(list => dispatch({ type: DELETE_LIST_ITEM, payload: list }));
+        // .then((list) => console.log(list));
+        .then(list => dispatch({ type: DELETE_LIST_ITEM, payload: list }));
   };
 };
