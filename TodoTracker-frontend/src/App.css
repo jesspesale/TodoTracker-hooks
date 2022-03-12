@@ -11,9 +11,9 @@
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 520px;
-  min-height: 600px;
-  background: #161a2b;
+  width: 650px;
+  /* min-height: 600px; */
+  background: #232a46;
   text-align: center;
   margin: 28px auto;
   border-radius: 10px;
