@@ -11,7 +11,7 @@ export default function List({list}) {
 
   return (
     <div>
-      <h4 className="todo-title">{list?.title}</h4>
+      <h4 className="list-title">{list?.title}</h4>
       {list?.list_items.map((item) => {
         return (
           <div key={item.id}>

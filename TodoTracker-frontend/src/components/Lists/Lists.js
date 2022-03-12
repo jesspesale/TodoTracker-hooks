@@ -19,7 +19,7 @@ export default function Lists() {
             {Array.isArray(lists) && lists.map((list) => {
               return (
                 <Link
-                  className="todo-title"
+                  className="list-title"
                   key={list.id}
                   to={`/lists/${list.id}`}
                 >

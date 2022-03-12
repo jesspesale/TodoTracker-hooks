@@ -17,8 +17,8 @@ export default function ListItem({item}) {
 
   return (
       <div className='list-item'>
-          <div>
-            <li>{item.description}</li>
+          <div className='item-row'>
+           {item.description}
           </div>
         <button 
             className='li-delete-button'
