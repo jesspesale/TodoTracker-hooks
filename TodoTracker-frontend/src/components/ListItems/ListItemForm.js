@@ -17,7 +17,6 @@ export default function ListItemForm({list}) {
     let newItem = {description: item, completed: false, list_id: list.id}
     dispatch(createListItem(newItem, list.id))
     setItem("")
-
     // navigate(`/lists/${list.id}`)
   }
 

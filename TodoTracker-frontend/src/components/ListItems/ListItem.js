@@ -2,16 +2,17 @@ import React from 'react'
 import { deleteListItem } from '../../redux/listActions'
 import "../Lists/Lists.css"
 import { useDispatch } from "react-redux"
+import { useNavigate } from 'react-router-dom'
 
 export default function ListItem({item}) {
   const dispatch = useDispatch()
-
+  const navigate = useNavigate();
     
 
     const handleClick = (clickedItem) => {
-        console.log(clickedItem)
-        // debugger
-        dispatch(deleteListItem(clickedItem.list_id, clickedItem.id))
+        const listId = clickedItem.list_id
+        dispatch(deleteListItem(listId, clickedItem.id))
+        navigate(`/lists/${listId}`);
     }
 
   return (
