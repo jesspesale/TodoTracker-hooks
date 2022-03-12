@@ -9,16 +9,12 @@ class Api::V1::ListItemsController < ApplicationController
 
     
     def show
-    #    @list_item = @list.list_items.find_by(id: params[:id])
-       
         @list_item = ListItem.find(params[:id])
         render json: @list_item
     end
     
     def create
         @list_item = @list.list_items.build(list_item_params)
-        # @list_item = list_items.build(list_item_params)
-        # binding.pry
         if @list_item.save
             render json: @list
         else
@@ -27,8 +23,10 @@ class Api::V1::ListItemsController < ApplicationController
     end
 
     def destroy
-        @list_item = ListItem.find(params[:id])
+        @list_item = @list.list_items.find_by(id: params[:id])
         @list_item.destroy
+        @new_list = List.find_by(id: params[:list_id])
+        render json: @new_list
     end
 
     private
