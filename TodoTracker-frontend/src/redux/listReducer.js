@@ -25,9 +25,8 @@ export default function listReducer(state = {lists: []}, action){
             lists: newLists
           }
         case DELETE_LIST_ITEM:
-            
             let newLists2 = state.lists.map(list => {
-              if(list.id === action.payload.list_id){
+              if(list.id === action.payload.id){
                  return action.payload
               }else {
                    return list
@@ -37,7 +36,6 @@ export default function listReducer(state = {lists: []}, action){
               ...state,
               lists: newLists2
             }
-          
 
       default:
         return state;
