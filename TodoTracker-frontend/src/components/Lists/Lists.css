@@ -57,6 +57,7 @@
 
 .form{
   margin-bottom: 32px;
+  display: inline;
 }
 
 .list-form{
@@ -66,24 +67,26 @@
 }
 
 .input{
-  padding: 14px 32px 14px 16px;
+  padding: 18px 32px 14px 16px;
   margin-top: 25px;
   border-radius: 4px 0 0 4px;
-  border: 2px solid #5d0cff;
+  border: 3px solid #5d0cff;
   outline: none;
-  width: 320px;
+  width: 400px;
   background: transparent;
   color: #fff;
+
 }
 
-.item-input::placeholder {
+.input::placeholder {
   text-align: center;
-  font-size: 20px;
-  color: #e2e2e2;
+  font-size: 22px;
+  /* color: #e2e2e2; */
 }
 
 .todo-button {
-  padding: 16px;
+  padding: 14px;
+  font-size: 20px;
   border: none;
   border-radius: 0 4px 4px 0;
   cursor: pointer;

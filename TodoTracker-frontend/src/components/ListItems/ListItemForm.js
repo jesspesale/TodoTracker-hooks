@@ -30,7 +30,7 @@ export default function ListItemForm({list}) {
           className="input"
           value={item}
           onChange={(e) => setItem(e.target.value)}
-          placeholder="Add to your list"
+          placeholder="Add something to your list"
         />
         <button className="todo-button">Add</button>
       </form>
