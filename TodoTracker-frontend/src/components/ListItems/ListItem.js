@@ -1,11 +1,17 @@
 import React from 'react'
+import { deleteListItem } from '../../redux/listActions'
 import "../Lists/Lists.css"
+import { useDispatch } from "react-redux"
 
 export default function ListItem({item}) {
+  const dispatch = useDispatch()
 
+    
 
     const handleClick = (clickedItem) => {
-        console.log(clickedItem);
+        console.log(clickedItem)
+        // debugger
+        dispatch(deleteListItem(clickedItem.list_id, clickedItem.id))
     }
 
   return (

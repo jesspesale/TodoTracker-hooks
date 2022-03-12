@@ -42,12 +42,11 @@ export function createListItem(item, listId) {
 
 export const deleteListItem = (listId, itemId) => {
   return (dispatch) => {
-      fetch(`http://localhost:3000/api/v1/lists/${listId}/list_items/${itemId}`, {
-        method: "DELETE",
-      }
-    )
-      .then(resp => resp.json())
-      .then(list => console.log(list))
+      fetch(`http://localhost:3000/api/v1/lists/${listId}/list_items/${itemId}`,{
+          method: "DELETE",
+        })
+        .then((resp) => resp.json())
+        .then((list) => console.log(list));
       // .then(list => dispatch({ type: DELETE_LIST_ITEM, payload: list }));
   };
 };
