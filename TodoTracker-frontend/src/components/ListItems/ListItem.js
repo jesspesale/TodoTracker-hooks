@@ -6,13 +6,13 @@ import { useNavigate } from 'react-router-dom'
 
 export default function ListItem({item}) {
   const dispatch = useDispatch()
-  const navigate = useNavigate();
+  const navigate = useNavigate()
     
 
     const handleClick = (clickedItem) => {
         const listId = clickedItem.list_id
         dispatch(deleteListItem(listId, clickedItem.id))
-        navigate(`/lists/${listId}`);
+        navigate(`/lists/${listId}`)
     }
 
   return (
@@ -25,5 +25,5 @@ export default function ListItem({item}) {
             onClick={() => handleClick(item)}
         >X</button>
       </div>
-  );
+  )
 }

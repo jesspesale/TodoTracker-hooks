@@ -30,5 +30,5 @@ export default function ListForm() {
         />
       </form>
     </div>
-  );
+  )
 }

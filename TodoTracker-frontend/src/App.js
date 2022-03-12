@@ -1,13 +1,13 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
 import "../src/components/Lists/Lists.css"
 // components/Lists/Lists.css
 import { Routes, Route } from "react-router-dom"
 import Lists from "./components/Lists/Lists"
-import ListForm from './components/Lists/ListForm';
-import Home from './components/Home';
-import Navbar from './components/Navbar';
-import ListContainer from './components/ListContainer';
+import ListForm from './components/Lists/ListForm'
+import Home from './components/Home'
+import Navbar from './components/Navbar'
+import ListContainer from './components/ListContainer'
 
 
 class App extends React.Component {
@@ -28,8 +28,8 @@ class App extends React.Component {
           </Routes>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

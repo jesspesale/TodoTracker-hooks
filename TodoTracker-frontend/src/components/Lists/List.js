@@ -1,12 +1,12 @@
 import React from 'react'
-import ListItem from '../ListItems/ListItem';
-import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import ListItem from '../ListItems/ListItem'
+import { useParams } from "react-router-dom"
+import { useSelector } from "react-redux"
 
 export default function List({list}) {
-    // const { id } = useParams();
-    // const lists = useSelector((state) => state.lists);
-    // const list = lists.find((list) => list.id == id);
+    // const { id } = useParams()
+    // const lists = useSelector((state) => state.lists)
+    // const list = lists.find((list) => list.id == id)
     // console.log(list)
 
   return (
@@ -17,9 +17,9 @@ export default function List({list}) {
           <div key={item.id}>
             <ListItem item={item} key={item.id} />
           </div>
-        );
+        )
       })}
       <br></br>
     </div>
-  );
+  )
 }
