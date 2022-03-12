@@ -24,10 +24,10 @@ export default function ListItemForm({list}) {
   return (
     <div>
       <br></br>
-      <form className="todo-form" onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         {/* <label>Add to your list: </label> */}
         <input
-          className="todo-input"
+          className="input"
           value={item}
           onChange={(e) => setItem(e.target.value)}
           placeholder="Add to your list"

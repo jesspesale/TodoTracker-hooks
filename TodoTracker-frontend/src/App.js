@@ -14,18 +14,18 @@ class App extends React.Component {
 
   render(){
     return (
-      <div className="App">
+      <div>
         <div>
           <Navbar />
         </div>
         <br></br>
-        <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/lists" element={<Lists />} />
-          <Route path="/lists/new" element={<ListForm />} />
-          <Route path="/lists/:id" element={<ListContainer />} />
-        </Routes>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/lists" element={<Lists />} />
+            <Route path="/lists/new" element={<ListForm />} />
+            <Route path="/lists/:id" element={<ListContainer />} />
+          </Routes>
         </div>
       </div>
     );

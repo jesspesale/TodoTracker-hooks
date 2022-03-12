@@ -19,15 +19,16 @@ export default function ListForm() {
     }
 
   return (
-    <div>
-      <form className="todo-form" onSubmit={handleSubmit}>
-        <label>Title</label>
+    <div className="list-form">
+      <form className="form" onSubmit={handleSubmit}>
+        <h2 className="list-title">What type of list are you making? </h2>
+        <label className="list-label">Title: </label>
         <input
           value={title}
-          className="todo-input"
+          className="input"
           onChange={(e) => setTitle(e.target.value)}
         />
       </form>
     </div>
-  )
+  );
 }
