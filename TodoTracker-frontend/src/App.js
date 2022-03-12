@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
-import {Routes, Route, Link} from "react-router-dom"
+import "../src/components/Lists/Lists.css"
+// components/Lists/Lists.css
+import { Routes, Route } from "react-router-dom"
 import Lists from "./components/Lists/Lists"
 import ListForm from './components/Lists/ListForm';
 import Home from './components/Home';
