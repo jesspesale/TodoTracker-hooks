@@ -1,13 +1,7 @@
 import React from 'react'
 import ListItem from '../ListItems/ListItem'
-import { useParams } from "react-router-dom"
-import { useSelector } from "react-redux"
 
 export default function List({list}) {
-    // const { id } = useParams()
-    // const lists = useSelector((state) => state.lists)
-    // const list = lists.find((list) => list.id == id)
-    // console.log(list)
 
   return (
     <div>
