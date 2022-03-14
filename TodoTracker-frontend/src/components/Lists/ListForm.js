@@ -15,7 +15,7 @@ export default function ListForm() {
         e.preventDefault()
         dispatch(createList({ title: title, completed: false }))
         setTitle('')
-        navigate('/lists')
+        navigate('/lists/:id')
     }
 
   return (

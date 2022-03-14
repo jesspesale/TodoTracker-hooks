@@ -5,7 +5,6 @@
     margin: 20px;
 }
 
-
 .form{
   margin-bottom: 32px;
   display: inline;
@@ -52,10 +51,27 @@
   text-transform: capitalize;
 }
 
+.delete-list-button{
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  margin-top: 25px;
+  border-radius: 6px;
+  /* color: #fff; */
+}
+
+.delete-list-button:hover{
+  background: linear-gradient(
+    90deg,
+    rgb(63, 147, 158) 0%,
+    rgba(100, 115, 255, 1) 100%
+  );
+}
+
 .icons{
   display: flex;
   align-items: center;
-  font-size: 36px;
+  font-size: 33px;
   cursor: pointer;
   margin-top: 15px;
   margin-left: 20px;

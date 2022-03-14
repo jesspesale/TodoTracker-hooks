@@ -9,12 +9,18 @@ export default function ListContainer() {
     const lists = useSelector((state) => state.lists)
     const list = lists.find((list) => list.id == id)
     
-    console.log(id)
+
+
+    const handleClick = () => {
+      console.log(id)
+    }
 
   return (
     <div>
       <List list={list}/>
       <ListItemForm list={list}/>
+      <br></br>
+      <button className='delete-list-button' onClick={handleClick}>Delete List</button>
     </div>
   )
 }
