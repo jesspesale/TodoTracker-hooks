@@ -1,6 +1,12 @@
-.list-title{
+.list-titles{
     text-decoration: none;
-    font-size: 25px;
+    font-size: 28px;
+    color: white;
+    margin: 20px;
+}
+.list-title{
+    text-decoration: underline;
+    font-size: 35px;
     color: white;
     margin: 20px;
 }

@@ -8,7 +8,7 @@ export default function Lists({lists}) {
             {Array.isArray(lists) && lists.map((list) => {
               return (
                 <Link
-                  className="list-title"
+                  className="list-titles"
                   key={list.id}
                   to={`/lists/${list.id}`}
                 >
