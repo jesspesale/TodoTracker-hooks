@@ -12,6 +12,12 @@ class Api::V1::ListItemsController < ApplicationController
         @list_item = ListItem.find(params[:id])
         render json: @list_item
     end
+
+    def update
+        @list_item = ListItem.find(params[:id])
+        @list_item.update(list_item_params)
+        render json: @list_item
+    end
     
     def create
         @list_item = @list.list_items.build(list_item_params)
