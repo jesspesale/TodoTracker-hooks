@@ -1,4 +1,4 @@
-import { FETCH_LISTS, ADD_LIST, ADD_ITEM, DELETE_LIST_ITEM } from "./constants";
+import { FETCH_LISTS, ADD_LIST, DELETE_LIST, ADD_ITEM, DELETE_LIST_ITEM } from "./constants"
 
 export default function listReducer(state = {lists: []}, action){
     switch (action.type) {
@@ -6,12 +6,17 @@ export default function listReducer(state = {lists: []}, action){
         return {
           ...state,
           lists: action.payload,
-        };
+        }
         case ADD_LIST:
           return {
             ...state,
             lists: [...state.lists, action.payload],
-          };
+          }
+        case DELETE_LIST:
+          return {
+            ...state,
+            lists: action.payload
+          }
         case ADD_ITEM:
           let newLists = state.lists.map(list => {
             if (list.id === action.payload.id) {
@@ -19,7 +24,7 @@ export default function listReducer(state = {lists: []}, action){
             } else {
               return list
             }
-          });
+          })
           return {
             ...state,
             lists: newLists
@@ -38,7 +43,7 @@ export default function listReducer(state = {lists: []}, action){
             }
 
       default:
-        return state;
+        return state
     }
 
 }

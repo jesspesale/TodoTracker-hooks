@@ -17,7 +17,7 @@ export default function ListForm() {
         dispatch(createList({ title: title, completed: false }))
         setTitle('')
         console.log(title)
-        // navigate('/lists/:id')
+        navigate('/lists/:id')
     }
 
   return (

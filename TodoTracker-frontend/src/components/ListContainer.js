@@ -1,18 +1,21 @@
 import React from 'react'
-import { useParams } from "react-router-dom"
 import ListItemForm from './ListItems/ListItemForm'
 import List from './Lists/List'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from "react-redux"
+import { deleteList } from '../redux/listActions'
+import { useNavigate, useParams } from "react-router-dom"
 
 export default function ListContainer() {
+    const dispatch = useDispatch()
     const { id } = useParams()
     const lists = useSelector((state) => state.lists)
     const list = lists.find((list) => list.id == id)
-    
-
+    const navigate = useNavigate()
+  
 
     const handleClick = () => {
-      console.log(id)
+      dispatch(deleteList(id))
+      navigate("/lists")
     }
 
   return (
