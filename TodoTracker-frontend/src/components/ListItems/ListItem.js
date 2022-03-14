@@ -4,6 +4,7 @@ import "../Lists/Lists.css"
 import { useDispatch } from "react-redux"
 import { useNavigate } from 'react-router-dom'
 import {BsTrash} from "react-icons/bs"
+import { FiEdit } from "react-icons/fi"
 
 export default function ListItem({item}) {
   const dispatch = useDispatch()
@@ -19,7 +20,8 @@ export default function ListItem({item}) {
   return (
     <div className="list-item">
       <div className="item-row">{item.description}</div>
-      <BsTrash className="icons" onClick={() => handleClick(item)} />
+      <BsTrash className="delete-icon" onClick={() => handleClick(item)} />
+      <FiEdit className="edit-icon" />
     </div>
   );
 }

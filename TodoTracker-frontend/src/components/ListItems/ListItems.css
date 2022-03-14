@@ -31,7 +31,25 @@
   );
 } 
 
-.item-row:nth-child(4n + 2) {
+.delete-icon{
+  display: flex;
+  align-items: center;
+  font-size: 33px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.edit-icon{
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+/* .item-row:nth-child(4n + 2) {
   background: linear-gradient(
     90deg,
     rgba(255, 12, 241, 1) 0%,
@@ -45,4 +63,4 @@
     rgba(20, 159, 255, 1) 0%,
     rgba(17, 122, 255, 1) 100%
   );
-}
+} */
