@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 import { createList } from "../../redux/listActions"
 import { useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import "./Lists.css"
 
 
@@ -15,7 +16,8 @@ export default function ListForm() {
         e.preventDefault()
         dispatch(createList({ title: title, completed: false }))
         setTitle('')
-        navigate('/lists/:id')
+        console.log(title)
+        // navigate('/lists/:id')
     }
 
   return (
