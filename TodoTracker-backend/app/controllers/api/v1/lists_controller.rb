@@ -16,7 +16,6 @@ class Api::V1::ListsController < ApplicationController
     end
 
     def show
-        # binding.pry
         @list = List.find(params[:id])
         render json: @list
     end
@@ -24,6 +23,8 @@ class Api::V1::ListsController < ApplicationController
     def destroy
         @list = List.find(params[:id])
         @list.destroy
+        @lists = List.all
+        render json: @lists
     end
 
     private
