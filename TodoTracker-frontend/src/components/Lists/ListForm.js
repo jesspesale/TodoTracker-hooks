@@ -17,7 +17,7 @@ export default function ListForm() {
         dispatch(createList({ title: title, completed: false }))
         setTitle('')
         console.log(title)
-        navigate('/lists/:id')
+        navigate('/lists')
     }
 
   return (
@@ -30,7 +30,9 @@ export default function ListForm() {
           className="input"
           onChange={(e) => setTitle(e.target.value)}
         />
+        <br></br><br></br>
+        <button className="create-list-button">Create List</button>
       </form>
     </div>
-  )
+  );
 }
