@@ -5,7 +5,9 @@ export default function Lists({lists}) {
 
       return (
         <div>
-            {Array.isArray(lists) && lists.map((list) => {
+          <h2 className="lists">Here is all your lists:</h2>
+          {Array.isArray(lists) &&
+            lists.map((list) => {
               return (
                 <Link
                   className="list-titles"
@@ -17,5 +19,5 @@ export default function Lists({lists}) {
               );
             })}
         </div>
-      )
+      );
 }
