@@ -23,25 +23,30 @@
 body{
   background: linear-gradient(
     90deg,
-    rgba(48, 16, 255, 1) 0%,
+    rgb(63, 147, 158) 0%,
     rgba(100, 115, 255, 1) 100%
   );
 }
 .nav-item{
-  padding: 20px;
+  padding: 15px;
   display: inline; 
   color: white; 
   font-size: 20px;
   text-decoration: none;
   margin: 15px;
-  border: 2px solid rgb(219, 219, 219);
+  border: 3px solid rgb(219, 219, 219);
   border-radius: 10px;
   font-weight: bold;
+}
+
+.nav-item:hover{
+  background-color: rgb(187, 186, 186);
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 .navbar{
   display: flex;   
   justify-content: center; 
-  /* justify-content: space-between; */
   margin-top: 40px;
 }

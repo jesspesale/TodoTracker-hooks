@@ -3,39 +3,25 @@ import './App.css'
 import "../src/components/Lists/Lists.css"
 import "../src/components/ListItems/ListItems.css";
 import { Routes, Route } from "react-router-dom"
-import Lists from "./components/Lists/Lists"
-import ListForm from './components/Lists/ListForm'
-import Home from './components/Home'
-import Navbar from './components/Navbar'
-import ListContainer from './components/ListContainer'
-import {useSelector} from "react-redux"
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchLists } from './redux/listActions';
 
-
-// class App extends React.Component {
-//   render(){
-//     return (
-//       <div>
-//         <div>
-//           <Navbar />
-//         </div>
-//         <br></br>
-//         <div className="App">
-//           <Routes>
-//             <Route path="/" element={<Home />} />
-//             <Route path="/lists" element={<Lists />} />
-//             <Route path="/lists/new" element={<ListForm />} />
-//             <Route path="/lists/:id" element={<ListContainer />} />
-//           </Routes>
-//         </div>
-//       </div>
-//     )
-//   }
-// }
-
-// export default App
-
+import Lists from "./components/Lists/Lists";
+import ListForm from "./components/Lists/ListForm";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import ListContainer from "./components/ListContainer";
 
 export default function App() {
+  const lists = useSelector((state) => state.lists);
+  // replaces mapStateToProps
+  const dispatch = useDispatch();
+  // replaces mapDispatchToProps
+
+  useEffect(() => {
+    dispatch(fetchLists());
+  }, []);
 
   return (
     <div>
@@ -46,7 +32,7 @@ export default function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/lists" element={<Lists />} />
+          <Route path="/lists" element={<Lists lists={lists} />} />
           <Route path="/lists/new" element={<ListForm />} />
           <Route path="/lists/:id" element={<ListContainer />} />
         </Routes>

@@ -10,8 +10,7 @@ export default function ListContainer() {
     const list = lists.find((list) => list.id == id)
     
     console.log(id)
-    // console.log(list)
-// debugger
+
   return (
     <div>
       <List list={list}/>
