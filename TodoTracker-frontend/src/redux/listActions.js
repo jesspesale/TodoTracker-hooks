@@ -1,4 +1,4 @@
-import { FETCH_LISTS, DELETE_LIST, ADD_LIST, ADD_ITEM, DELETE_LIST_ITEM } from "./constants"
+import { FETCH_LISTS, DELETE_LIST, EDIT_LIST_ITEM, ADD_LIST, ADD_ITEM, DELETE_LIST_ITEM } from "./constants"
 
 export function fetchLists(){
     return (dispatch) => {
@@ -52,13 +52,27 @@ export const deleteListItem = (listId, itemId) => {
 }
 
 export const deleteList = (listId) => {
-  // console.log(listId)
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/lists/${listId}`, {
       method: "DELETE",
     })
       .then(resp => resp.json())
-      .then(lists => dispatch({ type: "DELETE_LIST", payload: lists }))
-      // .then(data => console.log(data));
+      .then(lists => dispatch({ type: DELETE_LIST, payload: lists }))
+  }
+}
+
+export const editListItem = (listId, item) => {
+  return (dispatch) => {
+    // console.log(listId, item)
+    fetch(`http://localhost:3000/api/v1/lists/${listId}/list_items/${item.id}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      method: "PATCH",
+      body: JSON.stringify(item)
+    })
+      .then((resp) => resp.json())
+      .then((lists) => dispatch({ type: "EDIT_LIST_ITEM", payload: lists }));
   }
 }
