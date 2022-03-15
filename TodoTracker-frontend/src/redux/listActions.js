@@ -24,7 +24,6 @@ export function createList(list){
 }
 
 export function createListItem(item, listId) {
-    // console.log(item, listId)
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/lists/${listId}/list_items`, {
       method: "POST",
@@ -46,7 +45,6 @@ export const deleteListItem = (listId, itemId) => {
           method: "DELETE",
         })
         .then(resp => resp.json())
-        // .then((list) => console.log(list))
         .then(list => dispatch({ type: DELETE_LIST_ITEM, payload: list }))
   }
 }
@@ -63,7 +61,6 @@ export const deleteList = (listId) => {
 
 export const editListItem = (listId, item) => {
   return (dispatch) => {
-    // console.log(listId, item)
     fetch(`http://localhost:3000/api/v1/lists/${listId}/list_items/${item.id}`, {
       headers: {
         "Content-Type": "application/json",
@@ -73,6 +70,6 @@ export const editListItem = (listId, item) => {
       body: JSON.stringify(item)
     })
       .then((resp) => resp.json())
-      .then((lists) => dispatch({ type: "EDIT_LIST_ITEM", payload: lists }));
+      .then((lists) => dispatch({ type: EDIT_LIST_ITEM, payload: lists }))
   }
 }
