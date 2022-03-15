@@ -1,6 +1,6 @@
 import React from 'react'
 import ListItemForm from './ListItems/ListItemForm'
-import List from './Lists/List'
+import ListItem from './ListItems/ListItem'
 import { useSelector, useDispatch } from "react-redux"
 import { deleteList } from '../redux/listActions'
 import { useNavigate, useParams } from "react-router-dom"
@@ -20,10 +20,20 @@ export default function ListContainer() {
 
   return (
     <div>
-      <List list={list}/>
-      <ListItemForm list={list}/>
+      <h4 className="list-title">{list?.title}</h4>
+      {list?.list_items.map((item) => {
+        return (
+          <div key={item.id}>
+            <ListItem item={item} key={item.id} />
+          </div>
+        );
+      })}
       <br></br>
-      <button className='delete-list-button' onClick={handleClick}>Delete List</button>
+      <ListItemForm list={list} />
+      <br></br>
+      <button className="delete-list-button" onClick={handleClick}>
+        Delete List
+      </button>
     </div>
-  )
+  );
 }
