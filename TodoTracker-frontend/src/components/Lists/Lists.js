@@ -5,7 +5,7 @@ export default function Lists({lists}) {
 
       return (
         <div>
-          <h2 className="lists">Here is all your lists:</h2>
+          <h2 className="lists">Your Lists:</h2>
           {Array.isArray(lists) &&
             lists.map((list) => {
               return (

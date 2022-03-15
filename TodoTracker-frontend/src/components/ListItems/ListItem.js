@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import { deleteListItem, editListItem } from '../../redux/listActions'
-import "../Lists/Lists.css"
 import { useDispatch } from "react-redux"
 import { useNavigate } from 'react-router-dom'
 import {BsTrash} from "react-icons/bs"
@@ -11,7 +10,7 @@ export default function ListItem({item}) {
   const navigate = useNavigate()
 
   const [edit, setEdit] = useState(false)
-  const [newItem, setNewItem] = useState(item.description);
+  const [newItem, setNewItem] = useState(item.description)
     
 
     const handleDelete = (clickedItem) => {
@@ -31,6 +30,11 @@ export default function ListItem({item}) {
       setEdit(false)
     }
 
+    const completeTodo = () => {
+      item.completed = !item.completed
+      dispatch(editListItem(item.list_id, item))
+      navigate(`/lists/${item.list_id}`);
+    }
 
     if(edit){
       return (
@@ -42,13 +46,17 @@ export default function ListItem({item}) {
             placeholder="Edit your list"
           />
         </form>
-      );
+      )
     }
-
 
   return (
     <div className="list-item">
-      <div className="item-row">{item.description}</div>
+      <div 
+        className={item.completed ? "item-row completed" : "item-row" }
+        onClick={completeTodo}
+      >
+        {item.description}
+      </div>
       <BsTrash className="delete-icon" onClick={() => handleDelete(item)} />
       <FiEdit className="edit-icon" onClick={(e) => handleEdit(e)}/>
     </div>

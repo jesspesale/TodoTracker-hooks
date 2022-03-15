@@ -23,6 +23,11 @@
   width: 95%;
 }
 
+.completed {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
 .item-row:nth-child(4n + 1) {
   background: linear-gradient(
     90deg,

@@ -11,9 +11,11 @@
     color: white;
     margin: 20px;
 }
+
 .list-titles:hover{
 color: rgb(202, 199, 199);
 }
+
 .list-title{
     text-decoration: underline;
     font-size: 35px;
